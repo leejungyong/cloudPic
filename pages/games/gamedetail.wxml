@@ -1,0 +1,7 @@
+<!-- <view class='image-box' >
+  <image style="width:100%;" mode="widthFix" src=""></image>
+</view>
+<view class="explain"></view>
+<view class="info"></view> -->
+<import src="../../wxParse/wxParse.wxml" />
+  <template is="wxParse" data="{{wxParseData:detail.nodes}}" />

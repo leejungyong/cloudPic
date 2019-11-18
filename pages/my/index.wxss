@@ -1,0 +1,20 @@
+/* pages/my/index.wxss */
+page{
+  background: var(--background);
+}
+.top{
+  padding: 40rpx 30rpx;
+  background: #fff;
+  height: 210rpx;
+  box-sizing: border-box;
+}
+.avatar-box{
+  width: 130rpx;
+  height: 130rpx;
+}
+.right{
+  margin-left: 40rpx;
+}
+.right .nick{
+  font-size: 36rpx;
+}

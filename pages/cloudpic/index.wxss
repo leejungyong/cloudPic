@@ -1,0 +1,14 @@
+/* pages/cloudpic/index.wxss */
+page{
+  background: var(--background);
+}
+.btn{
+  width: 250rpx;
+  line-height: 50rpx;
+  margin-bottom: 80rpx;
+  border-radius: 10rpx;
+  color:var(--text) ;
+  font-size: 28rpx;
+  text-align: center;
+  border: 1px solid rgba(187, 187, 187, 1);
+}

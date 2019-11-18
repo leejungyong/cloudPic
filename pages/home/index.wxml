@@ -1,0 +1,34 @@
+<view>
+  <swiper indicator-dots="true" current='{{current}}' autoplay="true" style="height:{{imgheights[current]}}rpx" bindchange="bindchange">
+    <swiper-item wx:for="{{advans}}" wx:key="{{index}}">
+      <image src="{{item}}" style="width:100%;height:210rpx;" bindload="imageLoad" data-id="{{index}}"></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class="menus">
+  <view class="menu" bindtap="wanfa">
+    <view class="img-box">
+      <image class="img" src="http://img1.wondfun.com/xuehuiwan/img/wanfa.png-32_32"></image>
+    </view>
+    <view bindtap="wanfa">玩法</view>
+  </view>
+ <view class="menu" bindtap="game">
+    <view class="img-box">
+      <image class="img" src="http://img1.wondfun.com/xuehuiwan/img/game.png-32_32"></image>
+    </view>
+    <view bindtap="wanfa">游戏</view>
+  </view>
+   <view class="menu" bindtap="pic">
+    <view class="img-box">
+      <image class="img" src="http://img1.wondfun.com/xuehuiwan/img/cloudpic.png-32_32"></image>
+    </view>
+    <view bindtap="wanfa">云图</view>
+  </view>
+   <view class="menu" bindtap="group">
+    <view class="img-box">
+      <image class="img" src="http://img1.wondfun.com/xuehuiwan/img/shaketeam.png-32_32"></image>
+    </view>
+    <view bindtap="wanfa">摇分组</view>
+  </view>
+</view>

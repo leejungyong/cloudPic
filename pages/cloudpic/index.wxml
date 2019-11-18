@@ -1,0 +1,16 @@
+
+<view style="margin-top:200rpx;">
+<block wx:if="{{!isGetUserInfo}}">
+   <button class="btn" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">我的云图</button> 
+</block>
+<block wx:else>
+   <button class="btn" bindtap="toMyCloudPic">我的云图</button> 
+</block>
+<block wx:if="{{!isGetUserInfo}}">
+   <button class="btn" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo">创建云图</button> 
+</block>
+<block wx:else>
+   <button class="btn" bindtap="toCreate">创建云图</button> 
+</block>
+<button class="btn">联系云图摄影师</button>
+</view>

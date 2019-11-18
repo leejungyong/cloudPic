@@ -1,0 +1,2 @@
+<view>相册密码：{{actObj.pwd}}</view>
+<button open-type="share"  >分享</button>

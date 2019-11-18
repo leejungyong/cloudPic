@@ -1,0 +1,19 @@
+<view class="box">
+  <view>新建分类*</view>
+  <view class='lineone'>
+    <input class="input fl" type="text" placeholder="请输入分类名称" bindinput="getTypeName"></input>
+    <view class="add-btn"bindtap="add">添加</view>
+  </view>
+  <view class="list">
+    <view wx:for="{{list}}" wx:key="{{index}}" class="item">
+      <input class="input fl" bindinput="editName" data-idx="{{index}}" value="{{item.name}}" bindfocus="showSave" bindblur="showDelete"></input>
+      <block wx:if="{{isFocus&&current==index}}">
+        <text class="delete" bindtap="saveEdit" data-idx="{{index}}" >保存</text>
+      </block>
+      <block wx:else>
+        <text class="delete" bindtap="deleteType" data-idx="{{index}}">删除</text>
+      </block>
+    </view>
+  </view>
+
+</view>

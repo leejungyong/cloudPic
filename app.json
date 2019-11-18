@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/logs/logs",
+    "pages/cloudpic/index",
+    "pages/games/index",
+    "pages/my/index",
+    "pages/cloudpic/mycloudpic",
+    "pages/cloudpic/create",
+    "pages/cloudpic/uploadhome",
+    "pages/cloudpic/edit",
+    "pages/cloudpic/edittypes",
+    "pages/cloudpic/shareto",
+    "pages/cloudpic/splash",
+    "pages/games/gamedetail",
+    "pages/games/gamelist",
+    "pages/home/showurl",
+    "pages/group/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "学会玩",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "color": "#000",
+    "selectedColor": "#FF9800",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "iconPath": "icon/home_icon_love.png",
+        "selectedIconPath": "icon/home_icon_love.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/cloudpic/index",
+        "iconPath": "icon/home_icon_love.png",
+        "selectedIconPath": "icon/home_icon_love.png",
+        "text": "云图"
+      },
+      {
+        "pagePath": "pages/games/index",
+        "iconPath": "icon/home_icon_love.png",
+        "selectedIconPath": "icon/home_icon_love.png",
+        "text": "游戏"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "iconPath": "icon/home_icon_love.png",
+        "selectedIconPath": "icon/home_icon_love.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

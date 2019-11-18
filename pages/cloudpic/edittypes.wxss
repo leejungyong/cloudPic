@@ -1,0 +1,47 @@
+/* pages/cloudpic/edittypes.wxss */
+
+page{
+  background: var(--background);
+}
+.box{
+  width: 90%;
+  margin: 150rpx auto 0 auto;
+}
+.input{
+  width: 520rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 10rpx;
+  border: 1px solid var(--border);
+  background: #fff;
+  padding-left: 30rpx;
+}
+.add-btn{
+  display: inline-block;
+  width: 110rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius:10rpx;
+  text-align: center;
+  border: 1px solid var(--border);
+   background: #fff;
+   margin-left: 10rpx;
+}
+.lineone{
+  margin-top: 20rpx;
+}
+.list{
+  margin-top: 40rpx;
+}
+.list .item{
+  margin-top: 20rpx;
+}
+.delete{
+    display: inline-block;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius:10rpx;
+  text-align: center;
+   margin-left: 10rpx;
+}
+

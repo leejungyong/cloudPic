@@ -1,0 +1,7 @@
+<view class="list">
+  <view class="item" wx:for="{{list}}" wx:key="{{index}}" bindtap="toDetail" data-idx="{{index}}">
+  <image style="width:100%;" mode="widthFix" src="https://img.wondfun.com/data/attachment/{{item.pic}}"></image>
+  <view class="text"></view>
+  </view>
+</view>
+ 

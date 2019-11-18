@@ -1,0 +1,76 @@
+ 
+<!-- 图片列表 -->
+<scroll-view style="height:{{systemInfo.windowHeight}}px;" scroll-y='true' scroll-into-view="{{toView}}" lower-threshold="15"  bindscrolltolower="lower" > 
+  <view class="top">
+    <image src="{{act.sharepic}}" mode="aspectFill"> </image>
+  </view>
+  <view class="middle">
+    <view class="title">{{act.title}}</view>
+    <view class="minitext">已有
+      <text class="num">{{act.view}}</text> 人次浏览了相册</view>
+    <view>
+      <view class="minitext">{{act.date}}</view>
+      <view class="fr">
+        <image wx:if="{{towho=='photograph'}}" style="width:48rpx;height:48rpx;margin-right: 20rpx;" src="../../icon/camera.png" bindtap="toEdit"></image>
+        <!-- <image style="width:48rpx;height:48rpx;" src="../../icon/share.png"></image> -->
+         <button open-type="share" size="mini" class="sharebtn"></button>
+      </view>
+    </view>
+    <view class="minitext">{{act.address}}</view>
+  </view>
+  <!-- <view class="bigtitle">图片直播</view> -->
+    <view class="nav">
+    <scroll-view scroll-x="true" class="scroll-view-demo">
+      <view class="item {{currentTab==-1 ? 'active' : ''}}" bindtap="clickAll">全部</view>
+      <view class="item {{currentTab==index ? 'active' : ''}}" wx:for="{{cat}}" wx:key="{{index}}" data-idx="{{index}}" bindtap="navbarTap">
+        {{item.name}}
+      </view>
+    </scroll-view>
+  </view>
+  <view class="list">
+    <view class='image_box'>
+      <block wx:for="{{list}}" wx:key="{{idx}}" wx:for-index="idx" wx:for-item="it">
+        <image src="{{idx-curIndex<30?it.url+'-200_200':''}}" class="avatar" lazy-load bindtap="toBigImage" id="pic{{idx}}"></image>
+      </block>
+    </view>
+  </view>
+  <view bindtap="upload" class="bottom">上传图片</view>
+</scroll-view>
+<!-- 大图 -->
+<view class="mask" wx:if="{{showBig}}">
+  <view style="text-align:right;height:110rpx;position: absolute;top: 0;width: 100%;z-index: 998;">
+    <view class="close" bindtap="close">×</view>
+  </view>
+  <view style="height:{{systemInfo.windowHeight*2-220}}rpx; display:flex;align-items:center;">
+  <swiper class='swiper' current='{{current }}' bindchange='bindchange' easing-function='linear' style="height:{{imgheights[current]}}rpx; width:100%;">
+    <swiper-item wx:for='{{allAlbum}}' wx:key='{{index}}'>
+      <image src="{{index-current<2&&index-current>-2?item.url:''}}" data-id="{{index}}" lazy-load class='bigimage' mode='widthFix' bindload="imageLoad"></image>
+    </swiper-item>
+  </swiper>
+  </view>
+
+  <view class="icons">
+    <view class="item">
+    <image class="icon" src='../../icon/star.png'></image>
+    <view>收藏</view>
+    </view>
+    <view class="item">
+    <image class="icon" src='../../icon/share.png'></image>
+    <view>分享</view>
+    </view>
+    <view class="item">
+    <image class="icon" src='../../icon/heart.png'></image>
+    <view>1人喜欢</view>
+    </view>
+    <view class="look fr" wx:if="{{!allAlbum[current].checked}}" bindtap="lookOrigin" >查看原图</view>
+  </view>
+</view>
+
+<view class="pwdmask" wx:if="{{isPhotoGraph}}">
+<view class=" pwd-box">
+ <view class="text">相册码登陆*</view>
+  <input bindinput="updatePwd" class="inputpwd"></input>
+  <button bindtap="surePwd">确定</button>
+</view>
+ 
+</view>

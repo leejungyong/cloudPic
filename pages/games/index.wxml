@@ -1,0 +1,16 @@
+<view class="top"> 
+</view>
+
+<view class="types">
+  <view class="type" wx:for="{{typelist}}" wx:key="{{index}}" data-idx="{{index}}" bindtap="toList">
+    <image src="{{item.icon}}"></image>
+    <view>{{item.catname}}</view>
+  </view>
+</view>
+<view class="text">热门游戏排行</view>
+<view class="list">
+  <view class="item" wx:for="{{top10}}" wx:key="{{index}}" data-idx="{{index}}" bindtap="toDetail">
+    <image style="width:100%;" mode="widthFix"
+    src="https://img.wondfun.com/data/attachment/{{item.pic}}"></image>
+  </view>
+</view>

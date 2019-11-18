@@ -1,0 +1,11 @@
+/* pages/games/gamelist.wxss */
+
+page{
+  background: var(--background);
+}
+.list{
+  width: 100%;
+}
+.item{
+  margin-bottom: 20rpx;
+}

@@ -1,0 +1,18 @@
+<view class='list'>
+  <view class="item" wx:for="{{list}}" wx:key="{{index}}">
+    <view class="image-box">
+    <image src="{{item.sharepic}}"></image>
+    </view>
+    <view class="title">{{item.title}}</view>
+    <view class="info">
+    <text class="fl">{{item.address}}</text>
+    <text class="fr">{{item.date}}</text>
+    </view>
+    <view class="applys fr">
+      <image class="image" src="../../icon/edit.png" bindtap="toEdit" data-idx="{{index}}"></image>
+      <button class="sharebtn" size="mini" open-type="share" data-idx="{{index}}"></button>
+      <image class="image" src="../../icon/assign.png" bindtap="toAssign" data-idx="{{index}}"></image>
+      <image class="image" src="../../icon/delete.png" bindtap="deleteAct" data-idx="{{index}}"></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,42 @@
+/* pages/cloudpic/create.wxss */
+page{
+  background: var(--background);
+}
+.li{
+   width: 320px;
+   margin: 40rpx auto;
+}
+.text{
+  margin-bottom: 10rpx;
+}
+.input{
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 10rpx;
+  border: 1px solid var(--border);
+ padding-left: 30rpx;
+ background: #fff;
+}
+.pl-input{
+ color: #AAAAAA;
+}
+.choosePic{
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid var(--border);
+  font-size: 17px;
+  display: inline-block;
+}
+
+.btn{
+  width: 250rpx;
+  height: 30px;
+  border-radius: 10rpx;
+  text-align: center;
+  border: 1rpx solid var(--border);
+  background: #fff;
+  font-size: 28rpx;
+}

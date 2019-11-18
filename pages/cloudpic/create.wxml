@@ -1,0 +1,33 @@
+<view style="margin-top:60rpx;">
+  <view class='li'>
+    <view >活动名称*</view>
+    <!-- <input class="input" type="text" placeholder-class="pl-input" placeholder="请输入活动名称" bindinput="updateName"/> -->
+     <input class="input" type="text" placeholder-class="pl-input" placeholder="输入活动名称"  bindinput="getName" />
+  </view>
+   <view class='li'>
+    <view class="text">活动类型</view>
+    <input class="input" placeholder-class="pl-input" placeholder="请输入活动类型" bindinput="updateType"/>
+  </view>
+   <view class='li'>
+    <view class="text">活动时间</view>
+    <picker mode='date' bindchange="updateTime" >
+        <input class="input" placeholder-class="pl-input" placeholder="请选择活动时间" value="{{date}}"/>
+    </picker>
+
+  </view>
+   <view class='li'>
+    <view class="text">活动地点</view>
+    <input class="input" placeholder-class="pl-input" placeholder="请输入活动地点" bindinput="updatePlace"/>
+  </view>
+   <view class='li'>
+    <view class="text">活动首页图</view>
+    <view wx:if="{{homepic}}" class="fl" style="margin-right:10rpx"> <image style="width:82rpx;height:82rpx" src="{{homepic}}"></image></view>
+    <view class="choosePic" bindtap="chooseHomePic" >+</view>
+  </view>
+   <view class='li'>
+    <view class="text">活动分享图</view>
+        <view wx:if="{{sharepic}}"  class="fl" style="margin-right:10rpx"> <image style="width:82rpx;height:82rpx" src="{{sharepic}}"></image></view>
+    <view class="choosePic" bindtap="chooseSharePic">+</view>
+  </view>
+  <view> <button class="btn" bindtap="save">保存</button> </view>
+</view>

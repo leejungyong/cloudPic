@@ -1,0 +1,68 @@
+<!-- 图片列表 -->
+<scroll-view style="height:{{systemInfo.windowHeight}}px;" scroll-y='true' scroll-into-view="{{toView}}" lower-threshold="15" bindscrolltolower="lower">
+  <view class="top">
+    <image src="{{act.sharepic}}" mode="aspectFill"> </image>
+  </view>
+  <view class="middle">
+    <!-- <view class="title">{{act.title}}</view> -->
+    <input type="text" class="title" bindinput="updateTitle" value="{{act.title}}"></input>
+    <view>
+      <!-- <view class="minitext">{{act.date}}</view> -->
+      <picker mode="date" bindchange="updateDate" >
+            <input type="text" class="minitext" value="{{act.date}}"></input>
+      </picker>
+
+      <view class="fr">
+        <image style="width:48rpx;height:48rpx;margin-right: 20rpx;" src="../../icon/edit.png" bindtap="editTypes"></image>
+        <button open-type="share" size="mini" class="sharebtn"></button>
+        <!-- <image style="width:48rpx;height:48rpx;" src="../../icon/share.png"></image> -->
+      </view>
+    </view>
+    <!-- <view class="minitext">{{act.address}}</view> -->
+    <input type="text" class="minitext" bindinput="updateAddress" value="{{act.address}}"></input>
+  </view>
+  <!-- <view class="bigtitle">全部</view> -->
+  <view class="nav">
+    <scroll-view scroll-x="true" class="scroll-view-demo">
+      <view class="item {{currentTab==-1 ? 'active' : ''}}" bindtap="clickAll">未分类</view>
+      <view class="item {{currentTab==index ? 'active' : ''}}" wx:for="{{cat}}" wx:key="{{index}}" data-idx="{{index}}" bindtap="navbarTap">
+        {{item.name}}
+      </view>
+    </scroll-view>
+  </view>
+  <view class="list">
+    <view class='image_box' wx:for="{{list}}" wx:key="{{index}}">
+      <block>
+        <image src="{{index-curIndex<30?item.url+'-200_200':''}}" class="avatar" lazy-load id="pic{{index}}" bindlongpress='longPress' bindtap="toBigImage" data-idx="{{index}}"></image>
+        <view wx:if="{{showCheckbox}}" class="checkContant {{item.checked?'checked':''}}" bindtap="collectSelect" data-idx="{{index}}"></view>
+        <view style="text-align: center;">
+          <block wx:if="{{item.hidden==0}}">
+          <image style="width:50rpx;height:48rpx;" src="../../icon/look.png" bindtap="canLook" data-idx="{{index}}"></image>
+          </block>
+          <block wx:else>
+          <image style="width:50rpx;height:48rpx;" src="../../icon/look2.png" bindtap="hide" data-idx="{{index}}"></image>
+          </block>
+        </view>
+      </block>
+    </view>
+  </view>
+</scroll-view>
+<view class="bottom" wx:if="{{showCheckbox}}" >
+ <view bindtap="cancelEdit">取消</view>
+<block wx:if="{{isChooseAll}}">
+  <view bindtap="chooseAll">全选</view>
+</block>
+<block wx:else>
+  <view bindtap="cancelAll" >全不选</view>
+</block>
+  <view bindtap="deleteChoose" class="{{isGrey?'grey':''}}">删除</view>
+  <view>
+    <picker  bindchange="moveTo" value="{{index}}" range="{{cat}}" range-key="{{'name'}}" disabled="{{isGrey}}">
+      <view class="picker"  class="{{isGrey?'grey':''}}">
+        移至
+      </view>
+    </picker>
+  </view>
+  
+</view>
+<!-- 新建分类弹窗 -->
